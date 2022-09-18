@@ -18,23 +18,23 @@ public class DrawEvent : MonoBehaviour
     public int maxNumbBall = 59;
     private int maxBallsDrawn = 30;
     private List<int> allNumbers = new List<int>();
-    private int index = 0;
+    //private int index;
     //private SpriteRenderer spriteRenderer;
     private List<Sprite> spriteNumb = new List<Sprite>();
-    private bool canDraw = true;
+    private bool canDraw = false;
     private float lastDraw;
     private int drawIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-       //PlayRound();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canDraw)
+        if (canDraw == true)
         {
             if(Time.time - lastDraw > drawSpeed)
             {
@@ -55,6 +55,7 @@ public class DrawEvent : MonoBehaviour
 
     void PlayRound()
     {
+        canDraw = true;
         Sprite[] ballImages = Resources.LoadAll<Sprite>("balls");
         spriteNumb.AddRange(ballImages);
 
@@ -66,4 +67,6 @@ public class DrawEvent : MonoBehaviour
     {
         PlayRound();
     }
+
+    
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
-using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -16,6 +15,8 @@ public class Card : MonoBehaviour
     private List<Cell> cells = new List<Cell>();
 
     private SpriteRenderer spriteRenderer;
+
+    private int myMask;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,8 @@ public class Card : MonoBehaviour
 
     public void BuildCard()
     {
+        FindObjectOfType<DrawEvent>().draw.AddListener(CheckNumber);
+
         cells = Transform.FindObjectsOfType<Cell>().ToList();
         cells = cells.OrderBy(c => c.transform.GetSiblingIndex()).ToList();
 
@@ -48,6 +51,15 @@ public class Card : MonoBehaviour
         for (int i = 0; i < cells.Count; i++)
         {
             cells[i].Number = allNumbers[i];
+        }
+    }
+
+    public void CheckNumber(int number, int drawNumber)
+    {
+        if (cells.Any(c => c.Number == number))
+        {
+            var currentCell = cells.Find(e => e.Number == number);
+            currentCell.myType = CellType.RedX;
         }
     }
 }
