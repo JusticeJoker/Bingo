@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Enumerator for each Cell sprite
 public enum CellType
 {
     Blank, Yellow, RedX
@@ -9,24 +10,20 @@ public enum CellType
 
 public class Cell : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-
     private List<Sprite> cellSprites = new List<Sprite>();
-
     private int _number;
-
-    private CellType _myType;
-
-    public CellType myType
+    private CellType _myCell;
+    
+    public CellType myCell
     {
         get
         { 
-            return _myType;
+            return _myCell;
         }
         set
         { 
-            _myType = value;
-            GetComponent<SpriteRenderer>().sprite = cellSprites[(int)_myType];
+            _myCell = value;
+            GetComponent<SpriteRenderer>().sprite = cellSprites[(int)_myCell];
         }
     }
 
@@ -43,9 +40,10 @@ public class Cell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Sprite[] cellImages = Resources.LoadAll<Sprite> ("Cell");
 
         cellSprites.AddRange(cellImages);
-        myType = CellType.Blank;
+        myCell = CellType.Blank;
     }
 }
