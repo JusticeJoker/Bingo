@@ -306,7 +306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Credit Amount:'
+  m_Text: 'Credit Balance:'
 --- !u!222 &193066292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ RectTransform:
   m_Children:
   - {fileID: 910352906}
   m_Father: {fileID: 1836959367}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -398,9 +398,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 401852772}
         m_TargetAssemblyTypeName: DrawEvent, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: IncreaseCredit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -513,7 +513,7 @@ RectTransform:
   m_Children:
   - {fileID: 193066290}
   m_Father: {fileID: 1836959367}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -618,7 +618,7 @@ RectTransform:
   m_Children:
   - {fileID: 905252300}
   m_Father: {fileID: 1836959367}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -669,9 +669,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 401852772}
+        m_TargetAssemblyTypeName: DrawEvent, Assembly-CSharp
+        m_MethodName: DecreaseCredit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 550045147}
   - component: {fileID: 550045146}
   m_Layer: 5
-  m_Name: Bet Text
+  m_Name: Credit Amount Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bet Amount:'
+  m_Text: 'Inserting:'
 --- !u!222 &550045147
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1041,54 +1041,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &651637703
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 651637705}
-  - component: {fileID: 651637704}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &651637704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651637703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070ceaffea9b4724da50135a6be34cd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  draw:
-    m_PersistentCalls:
-      m_Calls: []
-  drawSpeed: 0.1
-  maxNumbBall: 59
---- !u!4 &651637705
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651637703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.74647176, y: 0.34596193, z: -3.1016889}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &671000939 stripped
 GameObject:
@@ -1286,7 +1238,7 @@ GameObject:
   - component: {fileID: 889749696}
   - component: {fileID: 889749695}
   m_Layer: 5
-  m_Name: Betting Box
+  m_Name: Credit Amount Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1305,7 +1257,7 @@ RectTransform:
   m_Children:
   - {fileID: 550045145}
   m_Father: {fileID: 1836959367}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1539,7 +1491,7 @@ RectTransform:
   m_Children:
   - {fileID: 1389847519}
   m_Father: {fileID: 1836959367}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1596,7 +1548,6 @@ GameObject:
   - component: {fileID: 1100252054}
   - component: {fileID: 1100252053}
   - component: {fileID: 1100252052}
-  - component: {fileID: 1100252051}
   m_Layer: 5
   m_Name: RandCard
   m_TagString: Untagged
@@ -1624,19 +1575,6 @@ RectTransform:
   m_AnchoredPosition: {x: 40.9, y: -171}
   m_SizeDelta: {x: 176.0578, y: 42.8462}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1100252051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100252049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f10063387b4af48a67119035e225ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCardNumber: 59
 --- !u!114 &1100252052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,7 +1619,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1100252051}
+      - m_Target: {fileID: 1221268746}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: RandCard
         m_Mode: 1
@@ -1761,7 +1699,7 @@ RectTransform:
   m_LocalScale: {x: 7.0000815, y: 0.55002, z: 1}
   m_Children: []
   m_Father: {fileID: 1836959367}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2164,12 +2102,12 @@ RectTransform:
   m_Children:
   - {fileID: 761274547}
   - {fileID: 1100252050}
+  - {fileID: 196847238}
+  - {fileID: 477076018}
   - {fileID: 1109231004}
   - {fileID: 1083804483}
   - {fileID: 355295168}
   - {fileID: 889749694}
-  - {fileID: 196847238}
-  - {fileID: 477076018}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2618,6 +2556,34 @@ PrefabInstance:
       propertyPath: maxNumbBall
       value: 59
       objectReference: {fileID: 0}
+    - target: {fileID: 946598766646834695, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
+      propertyPath: roundNumber
+      value: 
+      objectReference: {fileID: 1389847520}
+    - target: {fileID: 946598766646834695, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 761274549}
+    - target: {fileID: 946598766646834695, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
+      propertyPath: creditAmount
+      value: 
+      objectReference: {fileID: 550045146}
+    - target: {fileID: 946598766646834695, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
+      propertyPath: creditBalance
+      value: 
+      objectReference: {fileID: 193066291}
+    - target: {fileID: 946598766646834695, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
+      propertyPath: decreaseButton
+      value: 
+      objectReference: {fileID: 477076019}
+    - target: {fileID: 946598766646834695, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
+      propertyPath: increaseButton
+      value: 
+      objectReference: {fileID: 196847239}
+    - target: {fileID: 946598766646834695, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
+      propertyPath: randCardButton
+      value: 
+      objectReference: {fileID: 1100252052}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e8783516db21447beba3b4df4b44f8, type: 3}
 --- !u!1001 &6960220918537834971

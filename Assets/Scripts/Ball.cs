@@ -36,4 +36,9 @@ public class Ball : MonoBehaviour
             spriteRenderer.color = Color.white;
         }
     }
+
+    public void ResetBalls()
+    {
+        // Ver maneira de remover a sprite 
+    }
 }
